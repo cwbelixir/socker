@@ -1,0 +1,32 @@
+<h2>Listing Match players</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Match id</th>
+      <th>Team</th>
+      <th>Player name</th>
+      <th>Player stars</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for match_player <- @match_players do %>
+    <tr>
+      <td><%= match_player.match_id %></td>
+      <td><%= match_player.team %></td>
+      <td><%= match_player.player.name %></td>
+      <td><%= match_player.player.stars %></td>
+
+      <td class="text-right">
+        <span><%= link "Show", to: match_player_path(@conn, :show, match_player), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Edit", to: match_player_path(@conn, :edit, match_player), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Delete", to: match_player_path(@conn, :delete, match_player), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Match player", to: match_player_path(@conn, :new) %></span>

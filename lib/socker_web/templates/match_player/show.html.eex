@@ -1,0 +1,13 @@
+<h2>Show Match player</h2>
+
+<ul>
+
+  <li>
+    <strong>Team:</strong>
+    <%= @match_player.team %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: match_player_path(@conn, :edit, @match_player) %></span>
+<span><%= link "Back", to: match_player_path(@conn, :index) %></span>

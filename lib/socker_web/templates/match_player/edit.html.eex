@@ -1,0 +1,5 @@
+<h2>Edit Match player</h2>
+
+<%= render "form.html", Map.put(assigns, :action, match_player_path(@conn, :update, @match_player)) %>
+
+<span><%= link "Back", to: match_player_path(@conn, :index) %></span>
